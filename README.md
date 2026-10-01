@@ -2,7 +2,7 @@
 
 This repository accompanies the study on benchmarking molecular representation–prediction pipelines for drug discovery.
 
-The GitHub repository is intentionally lightweight. It mainly contains scripts for **dataset splitting**, **statistical visualization**, and **figure generation**. Because the complete benchmark datasets and full model/code packages are too large to host conveniently on GitHub, they are archived separately in **Zenodo**.
+The GitHub repository is intentionally lightweight. It mainly contains scripts for **dataset splitting**, **statistical visualization**, **figure generation**, and summary tables of the **Unified Score (US)** and **Unified Score Index (USI)**. Because the complete benchmark datasets and full model/code packages are too large to host conveniently on GitHub, they are archived separately in **Zenodo**.
 
 ## Repository structure
 
@@ -12,7 +12,9 @@ The GitHub repository is intentionally lightweight. It mainly contains scripts f
 ├── code_for_plot.zip
 ├── data_split.py
 ├── figure1.png
-└── plot_statistical_figure.py
+├── plot_statistical_figure.py
+├── US for 31 methods.xlsx
+└── USI for 31 methods.xlsx
 ```
 
 ### Files
@@ -36,6 +38,12 @@ The GitHub repository is intentionally lightweight. It mainly contains scripts f
 - **`figure1.png`**  
   Overview figure associated with the benchmark workflow.
 
+- **`US for 31 methods.xlsx`**  
+  Table containing the **Unified Score (US)** values of the 31 evaluated molecular representation–prediction pipelines across the benchmark datasets. US provides a dataset-level summary of the relative performance of each pipeline across the evaluation metrics used for the corresponding dataset.
+
+- **`USI for 31 methods.xlsx`**  
+  Table containing the **Unified Score Index (USI)** values of the 31 evaluated molecular representation–prediction pipelines. USI provides an aggregate summary of cross-dataset performance and is used for the overall ranking of the evaluated pipelines.
+
 ## Benchmark overview
 
 The study evaluates **31 molecular representation–prediction pipelines** across **17 drug-discovery-related datasets**, covering five application categories:
@@ -49,6 +57,15 @@ The study evaluates **31 molecular representation–prediction pipelines** acros
 The benchmark includes fixed and learned molecular representations based on 1D, 2D, 3D, and hybrid molecular information.
 
 For reproducibility, repeated dataset partitions were generated with the five predefined seeds listed above, and the same split corresponding to each seed was used for all evaluated pipelines.
+
+## US and USI score tables
+
+To facilitate inspection and reuse of the benchmark results, the dataset-level US values and overall USI values are provided directly in this GitHub repository:
+
+- `US for 31 methods.xlsx`
+- `USI for 31 methods.xlsx`
+
+These two files contain the summary scores used in the manuscript and can be used together with the plotting and statistical-analysis scripts provided in this repository.
 
 ## Data and full code availability
 
@@ -76,10 +93,11 @@ Users who wish to reproduce the complete benchmark should first download the cor
 ## Recommended reproduction workflow
 
 1. Clone this GitHub repository.
-2. Download the complete datasets and code packages from Zenodo.
-3. Use `data_split.py` to reproduce the predefined dataset partitions, if needed.
-4. Run the corresponding benchmark/model code from the Zenodo archive.
-5. Use the plotting scripts in `code_for_plot.zip` and `plot_statistical_figure.py` to reproduce the figures and statistical summaries.
+2. Inspect `US for 31 methods.xlsx` and `USI for 31 methods.xlsx` for the benchmark summary scores.
+3. Download the complete datasets and code packages from Zenodo.
+4. Use `data_split.py` to reproduce the predefined dataset partitions, if needed.
+5. Run the corresponding benchmark/model code from the Zenodo archive.
+6. Use the plotting scripts in `code_for_plot.zip` and `plot_statistical_figure.py` to reproduce the figures and statistical summaries.
 
 ## AMoR platform
 
@@ -89,4 +107,4 @@ https://amor.bioinforai.tech/
 
 ## License
 
-Please refer to the licenses of the original datasets and individual molecular representation/model implementations. The scripts provided in this repository are intended for academic research and reproducibility purposes.
+Please refer to the licenses of the original datasets and individual molecular representation/model implementations. The scripts and summary score tables provided in this repository are intended for academic research and reproducibility purposes.
