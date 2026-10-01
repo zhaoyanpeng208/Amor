@@ -1,7 +1,11 @@
 # Molecular Representation Benchmarking
 
 This repository accompanies the study on benchmarking molecular representation–prediction pipelines for drug discovery.
+## Benchmark framework
 
+The overall benchmarking workflow is illustrated below:
+
+![Overview of the molecular representation benchmarking framework](figure1.png)
 The GitHub repository is intentionally lightweight. It mainly contains scripts for **dataset splitting**, **statistical visualization**, **figure generation**, and summary tables of the **Unified Score (US)** and **Unified Score Index (USI)**. Because the complete benchmark datasets and full model/code packages are too large to host conveniently on GitHub, they are archived separately in **Zenodo**.
 
 ## Repository structure
